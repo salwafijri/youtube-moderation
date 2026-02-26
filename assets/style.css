@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@600&display=swap');
+
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    --bg-dark: #1b0c36;
+    --primary: #5c3fb8;
+    --primary-hover: #4a3294;
+    --text-main: #ffffff;
+    --text-muted: #b5a5c9;
+    --card-bg: #2d184d;
+    --danger: #9e1414;
+    --section-light: #f4f4f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    /* Efek cahaya bias ungu di kiri atas */
+    background-image: radial-gradient(circle at 15% 20%, rgba(92, 63, 184, 0.4) 0%, #1b0c36 40%, #0d041a 100%);
+    background-attachment: fixed;
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================
+   2. NAVBAR
+   ========================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 80px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    position: relative; 
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-links a.active {
+    background: transparent !important; 
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    left: 15px; 
+    right: 15px; 
+    bottom: 2px; 
+    height: 2px; 
+    background-color: var(--text-main); 
+    border-radius: 2px;
+}
+
+.btn-nav {
+    background: #392263 !important;
+}
+.btn-nav.active::after {
+    display: none;
+}
+
+/* =========================================
+   3. HERO SECTION & SEARCH
+   ========================================= */
+.hero {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.hero p {
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-size: 15px;
+}
+
+.search-form {
+    display: inline-flex;
+    width: 650px;
+    max-width: 90%;
+    margin-bottom: 60px;
+    gap: 6px; 
+    background: transparent;
+    padding: 0; 
+}
+
+.search-form input {
+    flex: 1;
+    background: #e6e6e6;
+    border: none;
+    outline: none;
+    padding: 16px 25px;
+    font-size: 15px;
+    color: #333;
+    font-style: italic;
+    border-radius: 12px;
+}
+
+.search-form button {
+    background: var(--primary); 
+    color: white;
+    border: none;
+    padding: 16px 35px;
+    border-radius: 12px; 
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-form button:hover {
+    background: var(--primary-hover);
+}
+
+.preview-images {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.preview-images .card {
+    width: 280px;
+    height: 160px;
+    background: linear-gradient(135deg, rgba(92, 63, 184, 0.5), rgba(45, 24, 77, 0.5));
+    border-radius: 12px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* =========================================
+   4. TRUSTED SECTION (Light Mode Area)
+   ========================================= */
+.trusted {
+    background-color: var(--section-light);
+    color: #1b0c36;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.trusted > p {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: #1b0c36;
+}
+
+.logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #999;
+    margin-bottom: 60px;
+}
+
+.testimonial {
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.testimonial h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    text-align: left;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    background: #000;
+    border-radius: 50%;
+}
+
+.profile strong {
+    color: #1b0c36;
+    font-size: 15px;
+}
+
+.profile span {
+    color: #666;
+    font-size: 13px;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.stats h2 {
+    font-size: 40px;
+    color: #1b0c36;
+    margin-bottom: 5px;
+}
+
+.stats p {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+/* =========================================
+   5. CTA & FOOTER
+   ========================================= */
+.cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 60px 100px;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.cta h2 {
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.cta a {
+    background: #e6e6e6;
+    color: #1b0c36;
+    text-decoration: none;
+    padding: 15px 35px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 15px;
+    transition: background 0.3s ease;
+}
+
+.cta a:hover {
+    background: #fff;
+}
+
+footer {
+    background: #0d041a;
+    padding: 50px 100px 30px;
+}
+
+.footer-left h3 {
+    font-family: 'Montserrat';
+    font-size: 30px;
+    margin-bottom: 15px;
+    font-weight: 400;
+}
+
+.footer-left p {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 8px;
+}
+
+.footer-bottom {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #666;
+}
+
+.social-icons span {
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+/* =========================================
+   6. INNER PAGES (Analyze, History, Login)
+   ========================================= */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+.container h2 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Custom Scrollbar for Comment Cards */
+.scroll-box {
+    width: 750px;
+    max-width: 100%;
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 15px;
+    margin-bottom: 30px;
+}
+
+.scroll-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroll-box::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+}
+
+.scroll-box::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+/* Comment/History Cards */
+.comment-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comment-content h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.comment-content p {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.delete-text {
+    color: var(--danger);
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn-danger {
+    background: var(--danger);
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Login Card */
+.login-card {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    width: 450px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.login-card h2 {
+    margin-bottom: 10px;
+}
+
+.login-card p {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+}
+
+.google-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8e8e8;
+    color: #333;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: background 0.3s ease;
+    margin-bottom: 15px;
+}
+
+.google-btn img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+.google-btn:hover {
+    background: #d4d4d4;
+}
+
+/* Hidden Login Bypass Button */
+.hidden-login {
+    background: transparent;
+    border: none;
+    color: transparent;
+    cursor: pointer;
+}
