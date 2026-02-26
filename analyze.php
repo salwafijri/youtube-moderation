@@ -5,7 +5,7 @@ session_start();
 <?php
 require __DIR__ . '/functions/youtube.php';
 
-$apiKey = "AIzaSyAyrBH68PIuQFuWADOSyEXFdpqajRPA_JE";
+$apiKey = "API DISINI";
 $comments = [];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
