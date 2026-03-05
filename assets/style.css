@@ -23,7 +23,6 @@
 
 body {
     background-color: var(--bg-dark);
-    /* Efek cahaya bias ungu di kiri atas */
     background-image: radial-gradient(circle at 15% 20%, rgba(92, 63, 184, 0.4) 0%, #1b0c36 40%, #0d041a 100%);
     background-attachment: fixed;
     color: var(--text-main);
