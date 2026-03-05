@@ -169,12 +169,31 @@ body {
     margin-bottom: 40px;
 }
 
+/* CONTAINER KOTAK */
 .preview-images .card {
-    width: 280px;
+    width: 280px; /* Ukuran default desktop */
+    max-width: 90%; /* Supaya di layar kecil gak kepotong */
     height: 160px;
     background: linear-gradient(135deg, rgba(92, 63, 184, 0.5), rgba(45, 24, 77, 0.5));
     border-radius: 12px;
     border: 2px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden; 
+    display: flex;
+    position: relative;
+}
+
+.preview-images .card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+    /* Transisi smooth untuk zoom */
+    transition: transform 0.5s ease; 
+}
+
+/* EFEK ZOOM YANG MENYESUAIKAN (SAFE ZOOM) */
+.preview-images .card:hover img {
+    transform: scale(1.1); 
 }
 
 /* =========================================
@@ -452,4 +471,23 @@ footer {
     border: none;
     color: transparent;
     cursor: pointer;
+}
+
+/* KHUSUS TAMPILAN MOBILE */
+@media (max-width: 768px) {
+    .preview-images {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .preview-images .card {
+        /* Di HP, kotak akan melebar nyesuaiin layar tapi tetep ada jarak di pinggir */
+        width: 320px; 
+        max-width: 95%; 
+        height: 180px;
+    }
+    
+    .preview-images .card:hover img {
+        transform: scale(1.05); 
+    }
 }

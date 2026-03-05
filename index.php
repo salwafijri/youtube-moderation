@@ -35,9 +35,15 @@
     </form>
 
     <div class="preview-images">
-        <div class="card"></div>
-        <div class="card"></div>
-        <div class="card"></div>
+        <div class="card">
+            <img src="assets/image 2.png" alt="Preview 1">
+        </div>
+        <div class="card">
+            <img src="assets/image 3.png" alt="Preview 2">
+        </div>
+        <div class="card">
+            <img src="assets/image 4.png" alt="Preview 3">
+        </div>
     </div>
 </section>
 
